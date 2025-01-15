@@ -41,20 +41,14 @@ public class Queue {
     }
 
     static void removeQ(){
-        int i=0;
-        int j=0;
-        node ptr;
+        if(top==null){
+            System.out.println("Queue is empty, nothing to remove");
+            return;
+        }
 
-        for(ptr=top; ptr.next !=null; ptr=ptr.next){
-            i++;
-        }
-        ptr=top;
-        for(j=1;j<i;j++){
-            ptr=ptr.next;
-        }
-        ptr.next=null;
-        j=0;
-        i=0;
+        node temp=top;
+        top=top.next;
+        temp.next=null;
     }
 
     static void print_Queue(){
